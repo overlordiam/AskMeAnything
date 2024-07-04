@@ -8,6 +8,14 @@ const Main = () => {
   const {input, onSent, recentPrompt, showResult, loading, 
   result, setInput} = useContext(Context);
 
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      console.log('Input value:', input);
+      onSent();
+      // You can also perform other actions here
+    }
+  };
+
   return (
     <div className="main">
       <div className="nav">
@@ -27,19 +35,19 @@ const Main = () => {
         </div>
         <div className="cards">
           <div className="card">
-            <p>Help me incorporate more plant-based options in my diet</p>
+            <p>What is the best coding language out there?</p>
             <img src={assets.compass_icon} alt=""></img>
           </div>
           <div className="card">
-            <p>Recommend new types of water sports, including pros & cons</p>
+            <p>Give me some good anime recommendations</p>
             <img src={assets.bulb_icon} alt=""></img>
           </div>
           <div className="card">
-            <p>Come up with a complex word riddle, including hints</p>
+            <p>What are the most populous countries around the world?</p>
             <img src={assets.message_icon} alt=""></img>
           </div>
           <div className="card">
-            <p>Walk me through how to apply for a new role</p>
+            <p>Give me a recipe to make tonkotsu ramen</p>
             <img src={assets.code_icon} alt=""></img>
           </div>
         </div></> 
@@ -68,7 +76,7 @@ const Main = () => {
         
         <div className="main-bottom">
           <div className="search-box">
-            <input onChange={(e) => setInput(e.target.value)} value={input} type="text" placeholder="Enter your prompt here" />
+            <input onChange={(e) => setInput(e.target.value)} onKeyDown={handleKeyDown} value={input} type="text" placeholder="Enter your prompt here" />
             <div className="search-box-icons">
               <img src={assets.gallery_icon} alt="" />
               <img src={assets.mic_icon} alt="" />
