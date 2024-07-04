@@ -21,7 +21,7 @@ const Main = () => {
         <>
         <div className="greet">
           <p>
-            <span>Hello, Master Name!</span>
+            <span>Welcome, Master.</span>
           </p>
           <p>How can I serve you today?</p>
         </div>
@@ -72,7 +72,14 @@ const Main = () => {
             <div className="search-box-icons">
               <img src={assets.gallery_icon} alt="" />
               <img src={assets.mic_icon} alt="" />
-              <img onClick={() => onSent()} src={assets.send_icon} alt="" />
+              {
+                input
+                ?
+                <img onClick={() => onSent()} src={assets.send_icon} alt="" />
+                :
+                null
+              }
+              
             </div>
           </div>
           <p className="bottom-info">Have fun!!</p>
