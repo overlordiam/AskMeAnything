@@ -38,6 +38,8 @@ const ContextProvider = (props) => {
       setRecentPrompt(input);
     } else {
       response = await run(prompt);
+      setPromptArray((prev) => [...prev, prompt])
+      setRecentPrompt(prompt);
     }
     
     let responseArray = response.split("**");
