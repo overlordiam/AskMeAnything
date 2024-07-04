@@ -8,14 +8,15 @@
  * https://ai.google.dev/gemini-api/docs/get-started/node
  */
 
-const {
+import {
     GoogleGenerativeAI,
     HarmCategory,
     HarmBlockThreshold,
-  } = require("@google/generative-ai");
+  } from "@google/generative-ai";
   
-  const apiKey = import.meta.env.GOOGLE_API_KEY;/*process.env.GEMINI_API_KEY;*/
+  const apiKey = process.env.GOOGLE_API_KEY;
   const genAI = new GoogleGenerativeAI(apiKey);
+  // console.log(apiKey);
   
   const model = genAI.getGenerativeModel({
     model: "gemini-1.5-flash",
@@ -40,6 +41,7 @@ const {
   
     const result = await chatSession.sendMessage(prompt);
     console.log(result.response.text());
+    return result.response.text();
   }
   
   export default run;

@@ -11,6 +11,7 @@
     justify-content: space-between;
     font-size: 22px;
     padding: 20px;
+    padding-bottom: 0px;
     color: #585858;
 }
 
@@ -43,6 +44,8 @@
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 15px;
     padding: 20px;
+    padding-top: 0px;
+    padding-bottom: 40px;
 }
 
 .main .card {
@@ -80,7 +83,7 @@
 
 .main-bottom {
     position: absolute;
-    bottom: 1;
+    bottom: 0;
     width: 100%;
     max-width: 900px;
     padding: 0px 20px;
@@ -124,4 +127,66 @@
     margin: 15px auto;
     text-align: center;
     font-weight: 300;
+}
+
+.result {
+    padding: 0px 5%;
+    padding-bottom: 20px;
+    max-height: 70vh;
+    overflow-y: scroll;
+}
+
+.result::-webkit-scrollbar {
+    display: none;
+}
+
+.result-title {
+    margin: 40px 0px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.result img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.result-response {
+    display: flex;
+    align-items: start;
+    gap: 20px;
+}
+
+.loader {
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+    gap: 10px;
+}
+
+.loader hr {
+    border-radius: 4px;
+    border: none;
+    background-color: #f6f7f8;
+    background: linear-gradient(to right, #9ed7ff, #ffffff, #9ed7ff);
+    background-size: 800px 50px;
+    animation: loader 3s infinite linear;
+    height:20px
+}
+
+@keyframes loader {
+    0%{
+        background-position: -800px 0;
+    }
+
+    100%{
+        background-position:800px 0px;
+    }
+}
+
+.result-response p {
+    font-size: 17px;
+    font-weight: 300px;
+    line-height: 1.8;
 }
